@@ -1,3 +1,5 @@
+import sys
+
 # FUNCTION FOR ENCRYPTION WITH KNOWN SHIFT-BY VALUE
 def caesar_encrypt(text_raw, shift_by):
     text_encrypted = ""
@@ -11,7 +13,7 @@ def caesar_encrypt(text_raw, shift_by):
             text_encrypted += chr(position_shifted)
         else:
             text_encrypted += character
-    return (text_encrypted)
+    return text_encrypted
 ##
 
 # FUNCTION FOR DECRYPTION WITH KNOWN SHIFT-BY VALUE
@@ -58,7 +60,7 @@ def run_main():
                         exit_choice = int(input("Enter value: "))
                         if exit_choice == 0:
                             print("Exiting the process.")
-                            exit()
+                            sys.exit()
                         elif exit_choice == 1:
                             break
                         else:
@@ -88,22 +90,22 @@ def run_main():
 
     # Perform chosen action: encryption, decryption, or brute force attack
     if fork_choice == 0:
-        for key_dict, value_dict in messages.items():
-            text_user_encrypted = caesar_encrypt(value_dict, shift_by_user)
-            print(f"\nEncrypted message {key_dict+1}: ")
+        for index, message in messages.items():
+            text_user_encrypted = caesar_encrypt(message, shift_by_user)
+            print(f"\nEncrypted message {index+1}: ")
             print(text_user_encrypted)
 
     elif fork_choice == 1:
-        for key_dict, value_dict in messages.items():
-            text_user_decrypted = caesar_decrypt(value_dict, shift_by_user)
-            print(f"\nDecrypted message {key_dict+1}: ")
+        for index, message in messages.items():
+            text_user_decrypted = caesar_decrypt(message, shift_by_user)
+            print(f"\nDecrypted message {index+1}: ")
             print(text_user_decrypted)
 
     elif fork_choice == 2:
-        for key_dict, value_dict in messages.items():
+        for index, message in messages.items():
             for shift_by_test in range(26):
-                text_user_brute_force = caesar_decrypt(value_dict, shift_by_test)
-                print(f"\nBrute force for normalized shift-by value {shift_by_test} for message {key_dict+1}: ")
+                text_user_brute_force = caesar_decrypt(message, shift_by_test)
+                print(f"\nBrute force for normalized shift-by value {shift_by_test} for message {index+1}: ")
                 print(text_user_brute_force)  
 ##
 
