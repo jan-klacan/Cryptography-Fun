@@ -109,7 +109,7 @@ def run_main():
                 print(text_user_brute_force)  
 ##
 
-# START-UP FUNCTION WITH CHECK IF SCRIPT RUN DIRECTLY
+# CALL OF THE MAIN RUNNING INTERFACE FUNCTION, AFTER CHECK IF THE SCRIPT RUN DIRECTLY
 if __name__ == "__main__":
     run_main()
 ##
