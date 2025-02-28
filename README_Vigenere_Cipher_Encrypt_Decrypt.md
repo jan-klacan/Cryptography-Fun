@@ -1,4 +1,4 @@
-README FOR "Vigenere_Cipher_Encrypt_Decrypt.py"
+README FOR "02_Vigenere_Cipher_Encrypt_Decrypt.py"
 
 The purpose of my script is a simple Python implementation of the Vigenère cipher technique. I implemented an interface for the user of the script so that when run, the user is presented with choices with the ultimate purpose of executing one of the two below:
 1. Encrypt a message with a user-specified keyword
